@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Class" representedClassName="Class" syncable="YES">
+        <attribute name="classTeacher" optional="YES" attributeType="String" minValueString="2" maxValueString="12" defaultValueString=""/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="section" optional="YES" attributeType="String"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Students" inverseName="classs" inverseEntity="Students"/>
+        <relationship name="tech" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="tech" inverseEntity="Teacher"/>
+    </entity>
+    <entity name="Students" representedClassName="Students" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="classs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="student" inverseEntity="Class"/>
+    </entity>
+    <entity name="Teacher" representedClassName="Teacher" syncable="YES">
+        <attribute name="classRep" optional="YES" attributeType="String" minValueString="2" maxValueString="20"/>
+        <attribute name="mainSub" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="tech" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Class" inverseName="tech" inverseEntity="Class"/>
+    </entity>
+    <elements>
+        <element name="Class" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Students" positionX="177.4560546875" positionY="179.2050170898438" width="128" height="88"/>
+        <element name="Teacher" positionX="-34.8677978515625" positionY="238.7402954101562" width="128" height="103"/>
+    </elements>
+</model>
